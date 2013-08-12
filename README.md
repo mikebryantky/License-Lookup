@@ -1,7 +1,7 @@
 License-Lookup
 ==============
 
-Amateur Radio call sign lookup tool. This code is used on the website KC4APP.net. Pulls data from 
+Amateur Radio call sign lookup tool. This code is used on the website http://www.KC4APP.net. Pulls data from 
 FCC and QRZ.com web services; also gets mapping information from Google Mapping API. Displays 
 call sign data and Google map of the operator's location.  Stores lookups in a MySQL database.
 
