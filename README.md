@@ -1,7 +1,7 @@
 License-Lookup
 ==============
 
-Amateur Radio call sign lookup tool. Pulls data from FCC and QRC.com web services; also gets mapping 
+Amateur Radio call sign lookup tool. Pulls data from FCC and QRZ.com web services; also gets mapping 
 information from Google Mapping API. Displays call sign data and Google map of the operator's location.  
 Stores lookups in a MySQL database.
 
