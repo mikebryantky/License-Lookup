@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+  <!-- 
+    stdout appender
+   -->
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+     <layout class="org.apache.log4j.PatternLayout">
+       <param name="ConversionPattern" value="%5p - %d{MM/dd/yyyy HH:mm:ss} - %c.%M() [Line:%L] - %m%n" />
+     </layout>
+  </appender>
+
+
+  <!--
+    Rolling file appender
+  -->
+  <appender name="rollingfile" class="org.apache.log4j.RollingFileAppender">
+    <param name="file" value="/tmp/amliclookup.log" />
+    <param name="MaxFileSize" value="300KB" />
+    <param name="MaxBackupIndex" value="10" />
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%5p - %d{MM/dd/yyyy HH:mm:ss} - %c.%M() [Line:%L] - %m%n" />
+    </layout>
+  </appender>
+  
+  <!--
+    Set app log level and appenders
+  -->
+  <logger name="com.millcreeksoftware.amliclookup" additivity="false">
+    <level value="warn" />
+    <appender-ref ref="rollingfile" />
+    <appender-ref ref="stdout" />
+  </logger>
+  
+  <!-- 
+    Set root log level to warn only. This will restrict all catalina and hibernate logs to be ignored unless they are >= WARN
+  -->
+  <root>
+    <priority value="warn" />
+    <appender-ref ref="rollingfile"/>
+  </root>
+</log4j:configuration>
